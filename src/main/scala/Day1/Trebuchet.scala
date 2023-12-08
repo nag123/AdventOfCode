@@ -2,18 +2,16 @@ package Day1
 
 object Trebuchet extends App{
 
-  val regex = """\d+""".r
+  val regexpart1 = """\d+""".r
 
-  var FindingDigitValue = io.Source
+  var part1 = io.Source
     .fromResource("input.txt")
     .getLines
     .flatMap {
        listofvalue =>
-         val  digits = regex.findAllIn(listofvalue).toList.map(_.toInt)
+         val  digits = regexpart1.findAllIn(listofvalue).toList.map(_.toInt)
          for(f <- digits.headOption ;l <- digits.lastOption) yield f*10+l
 }.sum
-println(FindingDigitValue)
-
-
+println(part1)
 
 }
