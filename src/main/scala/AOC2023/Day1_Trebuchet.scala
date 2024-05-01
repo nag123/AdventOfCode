@@ -1,13 +1,13 @@
-package Day1
+package AOC2023
 
 import scala.util.matching.Regex
 
-object Trebuchet extends App{
+object Day1_Trebuchet extends App{
 
   val regexpart1 = """\d+""".r
 
   var part1 = io.Source
-    .fromResource("input.txt")
+    .fromResource("day1")
     .getLines
     .flatMap {
        listofvalue =>
@@ -30,7 +30,7 @@ println(part1)
   }
 
   var input = io.Source
-    .fromResource("input.txt")
+    .fromResource("day1")
     .getLines.toList
   def firstDigitInString(line: String, regex: Regex): Option[Int] = regex.findFirstIn(line).map(parseWordsToNumbers)
 
